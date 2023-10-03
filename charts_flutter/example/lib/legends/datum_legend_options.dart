@@ -20,9 +20,10 @@
 /// require the justification to also be [endDrawArea].
 // EXCLUDE_FROM_GALLERY_DOCS_START
 import 'dart:math';
+
+import 'package:charts_flutter/flutter.dart' as charts;
 // EXCLUDE_FROM_GALLERY_DOCS_END
 import 'package:flutter/material.dart';
-import 'package:charts_flutter/flutter.dart' as charts;
 
 class DatumLegendOptions extends StatelessWidget {
   final List<charts.Series<dynamic, num>> seriesList;
@@ -77,7 +78,7 @@ class DatumLegendOptions extends StatelessWidget {
       // This example shows how to change the position and justification of
       // the legend, in addition to altering the max rows and padding.
       behaviors: [
-        new charts.DatumLegend(
+        new charts.DatumLegend<Object>(
           // Positions for "start" and "end" will be left and right respectively
           // for widgets with a build context that has directionality ltr.
           // For rtl, "start" and "end" will be right and left respectively.

@@ -16,9 +16,10 @@
 /// Bar chart with series legend example
 // EXCLUDE_FROM_GALLERY_DOCS_START
 import 'dart:math';
+
+import 'package:charts_flutter/flutter.dart' as charts;
 // EXCLUDE_FROM_GALLERY_DOCS_END
 import 'package:flutter/material.dart';
-import 'package:charts_flutter/flutter.dart' as charts;
 
 class SimpleDatumLegend extends StatelessWidget {
   final List<charts.Series<dynamic, num>> seriesList;
@@ -71,7 +72,7 @@ class SimpleDatumLegend extends StatelessWidget {
       animate: animate,
       // Add the series legend behavior to the chart to turn on series legends.
       // By default the legend will display above the chart.
-      behaviors: [new charts.DatumLegend()],
+      behaviors: [new charts.DatumLegend<Object>()],
     );
   }
 

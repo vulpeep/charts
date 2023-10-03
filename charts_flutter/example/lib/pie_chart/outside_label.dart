@@ -16,6 +16,7 @@
 /// Simple pie chart with outside labels example.
 // EXCLUDE_FROM_GALLERY_DOCS_START
 import 'dart:math';
+
 // EXCLUDE_FROM_GALLERY_DOCS_END
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/material.dart';
@@ -81,10 +82,11 @@ class PieOutsideLabelChart extends StatelessWidget {
         //       new charts.ArcLabelDecorator(
         //          insideLabelStyleSpec: new charts.TextStyleSpec(...),
         //          outsideLabelStyleSpec: new charts.TextStyleSpec(...)),
-        defaultRenderer: new charts.ArcRendererConfig(arcRendererDecorators: [
-          new charts.ArcLabelDecorator(
-              labelPosition: charts.ArcLabelPosition.outside)
-        ]));
+        defaultRenderer: new charts.ArcRendererConfig<Object>(
+            arcRendererDecorators: [
+              new charts.ArcLabelDecorator(
+                  labelPosition: charts.ArcLabelPosition.outside)
+            ]));
   }
 
   /// Create one series with sample hard coded data.

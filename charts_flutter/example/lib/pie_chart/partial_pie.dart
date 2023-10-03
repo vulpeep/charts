@@ -17,6 +17,7 @@
 /// in the chart.
 // EXCLUDE_FROM_GALLERY_DOCS_START
 import 'dart:math';
+
 // EXCLUDE_FROM_GALLERY_DOCS_END
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/material.dart';
@@ -72,7 +73,8 @@ class PartialPieChart extends StatelessWidget {
     // revolution.
     return new charts.PieChart(seriesList,
         animate: animate,
-        defaultRenderer: new charts.ArcRendererConfig(arcLength: 3 / 2 * pi));
+        defaultRenderer:
+            new charts.ArcRendererConfig<Object>(arcLength: 3 / 2 * pi));
   }
 
   /// Create one series with sample hard coded data.

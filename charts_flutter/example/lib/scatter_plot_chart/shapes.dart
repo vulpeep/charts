@@ -27,6 +27,7 @@
 /// be color with the color of the data.
 // EXCLUDE_FROM_GALLERY_DOCS_START
 import 'dart:math';
+
 // EXCLUDE_FROM_GALLERY_DOCS_END
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/material.dart';
@@ -116,7 +117,9 @@ class ShapesScatterPlotChart extends StatelessWidget {
       )
         // Accessor function that associates each datum with a symbol renderer.
         ..setAttribute(
-            charts.pointSymbolRendererFnKey, (int index) => data[index].shape)
+            charts.pointSymbolRendererFnKey,
+            (int? index) =>
+                index == null ? 'rect' : data[index].shape ?? 'rect')
         // Default symbol renderer ID for data that have no defined shape.
         ..setAttribute(charts.pointSymbolRendererIdKey, 'rect')
     ];
@@ -185,7 +188,9 @@ class ShapesScatterPlotChart extends StatelessWidget {
       )
         // Accessor function that associates each datum with a symbol renderer.
         ..setAttribute(
-            charts.pointSymbolRendererFnKey, (int index) => data[index].shape)
+            charts.pointSymbolRendererFnKey,
+            (int? index) =>
+                index == null ? 'rect' : data[index].shape ?? 'rect')
         // Default symbol renderer ID for data that have no defined shape.
         ..setAttribute(charts.pointSymbolRendererIdKey, 'rect')
     ];
